@@ -154,61 +154,8 @@ Additional engineered features can be built from the events, transactions and of
 4. **Validation**: time-based split to mimic out-of-time scoring.
 5. **Ranking**: sort each customer's offers by predicted probability and evaluate with MAP@7.
 
-## Project Structure
 
-```
-.
-├── data/                  # Raw data files (not tracked)
-├── notebooks/             # EDA and experiments
-├── src/
-│   ├── features.py        # Feature engineering
-│   ├── train.py           # Model training
-│   ├── predict.py         # Inference and submission file creation
-│   └── metrics.py         # MAP@7 implementation
-├── outputs/               # Predictions
-├── requirements.txt
-└── README.md
-```
 
-## Getting Started
-
-### Prerequisites
-
-- Python 3.9+
-- pandas, numpy, scikit-learn, pyarrow
-- A gradient boosting library (LightGBM, XGBoost or CatBoost)
-
-### Installation
-
-```bash
-git clone <your-repo-url>
-cd <your-repo-name>
-pip install -r requirements.txt
-```
-
-### Usage
-
-```bash
-# 1. Place the data files in the data/ folder
-
-# 2. Build features and train the model
-python src/train.py
-
-# 3. Generate predictions on the test set
-python src/predict.py
-```
-
-## Output Format
-
-The prediction file is a CSV with the following columns:
-
-| Column | Description |
-|---|---|
-| `id1` | Unique row identifier |
-| `id2` | Customer ID |
-| `id3` | Offer ID |
-| `id5` | Date |
-| `pred` | Predicted click probability |
 
 ## Guidelines and Constraints
 
